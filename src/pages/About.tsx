@@ -9,13 +9,13 @@ export default function About() {
       <section id="why-us" className="py-24 bg-bg-dark/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <FadeInWhenVisible direction="right" className="flex-1">
+            <FadeInWhenVisible direction="right" className="flex-1 w-full">
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/20 blur-2xl rounded-full"></div>
-                <img src="https://picsum.photos/seed/visa2/800/600" alt="Visa Consultation" className="rounded-2xl shadow-[0_20px_50px_rgba(255,51,51,0.3)] relative z-10 border border-primary/30" referrerPolicy="no-referrer" />
-                <div className="absolute -bottom-8 -right-8 bg-bg-card/90 backdrop-blur-md p-6 rounded-2xl shadow-[0_10px_30px_rgba(255,51,51,0.2)] border border-primary/50 z-20">
-                  <div className="text-4xl font-bold text-primary mb-1 drop-shadow-[0_0_10px_#ff3333]">99%</div>
-                  <div className="text-gray-300 font-medium">Success Rate</div>
+                <img src="https://picsum.photos/seed/visa2/800/600" alt="Visa Consultation" className="rounded-2xl shadow-[0_20px_50px_rgba(255,51,51,0.3)] relative z-10 border border-primary/30 w-full" referrerPolicy="no-referrer" />
+                <div className="absolute bottom-4 right-4 sm:-bottom-8 sm:-right-8 bg-bg-card/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-[0_10px_30px_rgba(255,51,51,0.2)] border border-primary/50 z-20">
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-1 drop-shadow-[0_0_10px_#ff3333]">99%</div>
+                  <div className="text-gray-300 font-medium text-sm sm:text-base">Success Rate</div>
                 </div>
               </div>
             </FadeInWhenVisible>

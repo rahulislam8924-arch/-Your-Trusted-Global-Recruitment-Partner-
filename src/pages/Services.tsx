@@ -40,7 +40,7 @@ export default function Services() {
               { icon: HardHat, title: 'Work Visa', desc: 'Build your career abroad. We guide you through the work visa process.' }
             ].map((service, i) => (
               <FadeInWhenVisible key={i} delay={i * 0.1}>
-                <div className="bg-bg-card/80 backdrop-blur-md p-10 rounded-2xl text-center shadow-[0_10px_30px_rgba(255,51,51,0.1)] transition-all duration-300 border border-primary/20 relative overflow-hidden group hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)] hover:border-primary h-full">
+                <div className="bg-bg-card/80 backdrop-blur-md p-8 lg:p-10 rounded-2xl text-center shadow-[0_10px_30px_rgba(255,51,51,0.1)] transition-all duration-300 border border-primary/20 relative overflow-hidden group hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)] hover:border-primary h-full">
                   <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,51,51,0.1)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <service.icon className="w-12 h-12 text-primary mx-auto mb-5 drop-shadow-[0_0_15px_#ff3333] transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="text-2xl mb-4">{service.title}</h3>

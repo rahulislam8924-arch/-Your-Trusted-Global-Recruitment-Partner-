@@ -129,7 +129,7 @@ export default function News() {
                 <ArrowRight className="rotate-180" size={24} />
               </button>
             </div>
-            <div className="p-8 lg:p-12 overflow-y-auto">
+            <div className="p-6 lg:p-12 overflow-y-auto">
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                 <span className="flex items-center gap-1"><Calendar size={16} className="text-primary" /> {selectedNews.date}</span>
                 <span className="flex items-center gap-1"><User size={16} className="text-primary" /> {selectedNews.author}</span>

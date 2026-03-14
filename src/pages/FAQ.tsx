@@ -28,11 +28,11 @@ export default function FAQ() {
                 <button
                   aria-expanded={faqOpen === i}
                   aria-controls={`faq-answer-${i}`}
-                  className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-primary/10"
+                  className="w-full px-6 py-5 text-left flex justify-between items-center gap-4 focus:outline-none focus:bg-primary/10"
                   onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                 >
                   <span className="font-semibold text-white text-lg">{faq.q}</span>
-                  <ChevronDown className={`text-primary transition-transform duration-300 ${faqOpen === i ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`text-primary shrink-0 transition-transform duration-300 ${faqOpen === i ? 'rotate-180' : ''}`} />
                 </button>
                 <div id={`faq-answer-${i}`} className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${faqOpen === i ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <p className="text-gray-400 border-t border-primary/20 pt-4">{faq.a}</p>

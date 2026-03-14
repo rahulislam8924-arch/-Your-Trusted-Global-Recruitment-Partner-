@@ -104,8 +104,8 @@ export default function Home() {
             className="w-full text-center"
           >
             <h1 className="text-4xl lg:text-8xl leading-tight mb-8 drop-shadow-[0_0_20px_rgba(255,51,51,0.5)] font-bold tracking-tight">
-              <span className="block mb-2 text-white/90 font-light tracking-widest uppercase text-2xl lg:text-3xl">Your Journey Starts with</span>
-              <span className="bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_4s_linear_infinite] block py-4 text-6xl lg:text-9xl">ViSa MoTiOn</span>
+              <span className="block mb-2 text-white/90 font-light tracking-widest uppercase text-xl sm:text-2xl lg:text-3xl">Your Journey Starts with</span>
+              <span className="bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_4s_linear_infinite] block py-4 text-5xl sm:text-6xl lg:text-9xl">ViSa MoTiOn</span>
             </h1>
             <p className="text-lg lg:text-xl mb-10 text-gray-300 opacity-90 max-w-4xl mx-auto whitespace-normal lg:whitespace-nowrap">
               Professional visa assistance with 99% success rate. We handle the paperwork, you pack your bags.
@@ -286,8 +286,10 @@ export default function Home() {
               { title: 'Common Visa Rejection Reasons', desc: 'Avoid these common mistakes that lead to visa application rejections.', img: 'https://picsum.photos/seed/visa/600/400' }
             ].map((post, i) => (
               <FadeInWhenVisible key={i} delay={i * 0.1}>
-                <div className="bg-bg-card/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(255,51,51,0.1)] border border-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)] hover:border-primary">
-                  <img src={post.img} alt={post.title} className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110" referrerPolicy="no-referrer" />
+                <div className="group bg-bg-card/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(255,51,51,0.1)] border border-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)] hover:border-primary">
+                  <div className="overflow-hidden">
+                    <img src={post.img} alt={post.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
+                  </div>
                   <div className="p-6">
                     <h3 className="text-xl mb-3">{post.title}</h3>
                     <p className="text-gray-400 mb-4">{post.desc}</p>
@@ -308,7 +310,7 @@ export default function Home() {
             <p className="section-subtitle">Check the real-time status of your visa application</p>
           </FadeInWhenVisible>
           <FadeInWhenVisible delay={0.2}>
-            <div className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-10 border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
+            <div className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-6 sm:p-10 border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
               <div className="flex flex-col sm:flex-row gap-4">
                 <input type="text" value={trackingRef} onChange={e => setTrackingRef(e.target.value)} id="ref-number" aria-label="Reference Number" placeholder="Enter Reference Number (e.g., VISA12345)" className="flex-1 p-4 bg-bg-dark border border-primary/30 rounded-lg text-white text-base focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(255,51,51,0.3)]" />
                 <button onClick={handleTrackStatus} disabled={isTracking} className="btn whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
@@ -349,7 +351,7 @@ export default function Home() {
             <p className="section-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
           </FadeInWhenVisible>
           <FadeInWhenVisible delay={0.2}>
-            <div className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-10 border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
+            <div className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-6 sm:p-10 border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
               <form onSubmit={handleAppSubmit}>
                 {formStep === 1 && (
                   <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
@@ -387,8 +389,8 @@ export default function Home() {
                         <input type="date" value={formData.travelDate} onChange={e => setFormData({...formData, travelDate: e.target.value})} aria-label="Travel Date" className="w-full p-3 bg-bg-dark border border-primary/30 rounded-lg text-white focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(255,51,51,0.3)]" />
                       </div>
                       <div className="flex justify-between mt-8">
-                        <button type="button" onClick={() => setFormStep(1)} className="px-8 py-3 rounded-full font-semibold bg-gray-800 text-white hover:bg-gray-700 transition-colors">← Previous</button>
-                        <button type="button" onClick={() => nextStep(3)} className="btn">Next →</button>
+                        <button type="button" onClick={() => setFormStep(1)} className="px-6 sm:px-8 py-3 rounded-full font-semibold bg-gray-800 text-white hover:bg-gray-700 transition-colors">← Prev</button>
+                        <button type="button" onClick={() => nextStep(3)} className="btn px-6 sm:px-8">Next →</button>
                       </div>
                     </div>
                   </motion.div>
@@ -413,10 +415,10 @@ export default function Home() {
                       <div>
                         <textarea value={formData.requirements} onChange={e => setFormData({...formData, requirements: e.target.value})} aria-label="Special Requirements" rows={4} placeholder="Any special requirements?" className="w-full p-3 bg-bg-dark border border-primary/30 rounded-lg text-white focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(255,51,51,0.3)]"></textarea>
                       </div>
-                      <div className="flex justify-between mt-8">
-                        <button type="button" onClick={() => setFormStep(2)} className="px-8 py-3 rounded-full font-semibold bg-gray-800 text-white hover:bg-gray-700 transition-colors">← Previous</button>
-                        <button type="submit" disabled={isSubmittingApp} className="btn flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
-                          {isSubmittingApp ? <><motion.div animate={{ rotate: [0, 15, -15, 0] }} transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}><Loader2 className="w-5 h-5" /></motion.div> Submitting...</> : 'Submit Application'}
+                      <div className="flex justify-between mt-8 gap-4">
+                        <button type="button" onClick={() => setFormStep(2)} className="px-6 sm:px-8 py-3 rounded-full font-semibold bg-gray-800 text-white hover:bg-gray-700 transition-colors">← Prev</button>
+                        <button type="submit" disabled={isSubmittingApp} className="btn px-6 sm:px-8 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed flex-1 sm:flex-none">
+                          {isSubmittingApp ? <><motion.div animate={{ rotate: [0, 15, -15, 0] }} transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}><Loader2 className="w-5 h-5" /></motion.div> Submitting...</> : 'Submit'}
                         </button>
                       </div>
                     </div>

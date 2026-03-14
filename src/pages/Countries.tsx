@@ -374,7 +374,7 @@ export default function Countries() {
               <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4 font-heading">Visa Fee Calculator</h2>
               <p className="text-gray-400 text-lg">Get an instant estimate for your visa application costs.</p>
             </div>
-            <div className="bg-bg-dark/60 backdrop-blur-2xl p-8 lg:p-12 rounded-[3rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.7)] relative overflow-hidden">
+            <div className="bg-bg-dark/60 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 rounded-3xl lg:rounded-[3rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.7)] relative overflow-hidden">
               <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 relative z-10">
@@ -587,7 +587,7 @@ export default function Countries() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-card lg:bg-gradient-to-r lg:from-transparent lg:to-bg-card"></div>
                 </div>
-                <div className="lg:w-3/5 p-8 lg:p-12 overflow-y-auto">
+                <div className="lg:w-3/5 p-6 lg:p-12 overflow-y-auto">
                   <div className="flex items-center gap-3 mb-4">
                     <MapPin className="text-primary" size={24} />
                     <h2 className="text-3xl font-bold text-white font-heading">{selectedCountry.name}</h2>

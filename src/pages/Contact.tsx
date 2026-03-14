@@ -79,7 +79,7 @@ export default function Contact() {
             </div>
           </FadeInWhenVisible>
           <FadeInWhenVisible direction="left" className="flex-1">
-            <div className="bg-bg-card/80 backdrop-blur-md p-10 rounded-2xl border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
+            <div className="bg-bg-card/80 backdrop-blur-md p-8 lg:p-10 rounded-2xl border border-primary/30 shadow-[0_20px_40px_rgba(255,51,51,0.2)]">
               <h3 className="text-3xl font-bold text-white mb-8 font-heading">Send us a Message</h3>
               <form onSubmit={(e) => handleGenericSubmit(e, setContactLoading, 'Thank you for your message! We will get back to you shortly.')} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

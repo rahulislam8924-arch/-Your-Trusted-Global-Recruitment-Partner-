@@ -17,7 +17,7 @@ export default function Pricing() {
             { title: 'VIP', price: '$399', desc: 'Complete peace of mind', features: ['Everything in Premium', 'Doorstep Document Collection', 'Airport Meet & Greet', 'Travel Insurance Included'] }
           ].map((plan, i) => (
             <FadeInWhenVisible key={i} delay={i * 0.1}>
-              <div className={`bg-bg-card/80 backdrop-blur-md p-10 rounded-2xl border ${plan.popular ? 'border-primary shadow-[0_0_30px_rgba(255,51,51,0.2)] transform md:-translate-y-4' : 'border-primary/20'} relative flex flex-col h-full transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)]`}>
+              <div className={`bg-bg-card/80 backdrop-blur-md p-8 lg:p-10 rounded-2xl border ${plan.popular ? 'border-primary shadow-[0_0_30px_rgba(255,51,51,0.2)] transform md:-translate-y-4' : 'border-primary/20'} relative flex flex-col h-full transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,51,51,0.3)]`}>
                 {plan.popular && <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-[0_0_10px_#ff3333]">Most Popular</div>}
                 <h3 className="text-2xl mb-2">{plan.title}</h3>
                 <div className="text-4xl font-bold text-white mb-4 font-heading">{plan.price}</div>

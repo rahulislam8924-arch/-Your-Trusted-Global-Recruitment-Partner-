@@ -78,21 +78,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ViSa <span className="text-primary drop-shadow-[0_0_15px_#ff3333]">MoTiOn</span>
             </Link>
             
-            <ul className={`lg:flex gap-8 items-center ${isMenuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-bg-dark/95 backdrop-blur-md py-5 border-b border-primary shadow-[0_10px_20px_rgba(255,51,51,0.3)]' : 'hidden'}`}>
-              {navLinks.map((item) => (
-                <li key={item.name} className="w-full lg:w-auto text-center">
-                  <Link to={item.path} 
-                     onClick={() => setIsMenuOpen(false)}
-                     className={`block py-2 lg:py-0 font-medium transition-all relative group hover:scale-105 ${location.pathname === item.path ? 'text-primary drop-shadow-[0_0_8px_#ff3333]' : 'text-white hover:text-primary hover:drop-shadow-[0_0_8px_#ff3333]'}`}>
-                    {item.name}
-                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary shadow-[0_0_10px_#ff3333] transition-all ${location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            
-            <div className={`lg:block ${isMenuOpen ? 'block w-full text-center mt-4 order-3' : 'hidden'} ml-4`}>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="btn text-sm px-5 py-2 w-full lg:w-auto">Get Consultation</Link>
+            <div className={`lg:flex items-center gap-8 ${isMenuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-bg-dark/95 backdrop-blur-md py-6 border-b border-primary shadow-[0_10px_20px_rgba(255,51,51,0.3)]' : 'hidden'}`}>
+              <ul className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center w-full lg:w-auto">
+                {navLinks.map((item) => (
+                  <li key={item.name} className="w-full lg:w-auto text-center">
+                    <Link to={item.path} 
+                       onClick={() => setIsMenuOpen(false)}
+                       className={`block py-2 lg:py-0 font-medium transition-all relative group hover:scale-105 ${location.pathname === item.path ? 'text-primary drop-shadow-[0_0_8px_#ff3333]' : 'text-white hover:text-primary hover:drop-shadow-[0_0_8px_#ff3333]'}`}>
+                      {item.name}
+                      <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary shadow-[0_0_10px_#ff3333] transition-all ${location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-4 lg:mt-0 w-full lg:w-auto px-6 lg:px-0 text-center">
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="btn text-sm px-5 py-2.5 w-full lg:w-auto inline-block">Get Consultation</Link>
+              </div>
             </div>
             
             <button aria-label="Toggle menu" aria-expanded={isMenuOpen} className="lg:hidden text-white ml-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -224,10 +226,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-xs tracking-wide">
+            <p className="text-gray-500 text-xs tracking-wide text-center md:text-left">
               &copy; {new Date().getFullYear()} <span className="text-white font-medium">ViSa MoTiOn</span>. All rights reserved.
             </p>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               <a href="#" onClick={e => e.preventDefault()} className="text-gray-500 hover:text-white text-xs transition-colors">Privacy Policy</a>
               <a href="#" onClick={e => e.preventDefault()} className="text-gray-500 hover:text-white text-xs transition-colors">Terms of Service</a>
               <a href="#" onClick={e => e.preventDefault()} className="text-gray-500 hover:text-white text-xs transition-colors">Cookie Policy</a>
